@@ -446,7 +446,7 @@ color:var(--text-color)
         position: absolute;
         margin: 80px 19% 0 0%;
         z-index: -1;
-        width:90%;
+        width:100%;
         top:4%;
         align-items: center;
         justify-content: center;
