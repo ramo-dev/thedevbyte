@@ -85,7 +85,7 @@ const Login = () => {
                     </div>
                 </form>
                 <div className="input-box button">
-                    <button onClick={signInWithGoogle}> Continue with <i className="fa-brands fa-google"></i>oogle</button>
+                    {/* <button onClick={signInWithGoogle}> Continue with <i className="fa-brands fa-google"></i>oogle</button> */}
                 </div>
                 <div className="text">
                     <h3>Dont have an account? <Link to='/register'>Register now</Link></h3>
