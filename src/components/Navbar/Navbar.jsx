@@ -46,7 +46,7 @@ const Navbar = () => {
     function handleLogout() {
         account.signOut();
         const Timer = setTimeout(() => {
-        window.location.reload()
+    navigate('/')
         }, 300);
 
         return () => clearTimeout(Timer);

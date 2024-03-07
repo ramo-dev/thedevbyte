@@ -164,6 +164,7 @@ const BlogsData = () => {
             style : {background : '#292b2c'},} )
         const userId = account?.currentUser?.uid;
         let profilePic = null
+        let username = account?.currentUser?.displayName 
         if(account?.currentUser?.photoURL){
             profilePic = account?.currentUser?.photoURL 
         }
@@ -179,7 +180,7 @@ const BlogsData = () => {
                 body: content,
                 userId: userId,
                 timestamp: serverTimestamp(),
-                username : account?.currentUser?.displayName,
+                username : account?.currentUser?.displayName ,
                 profilePhoto : profilePic
             });
             toast.dismiss()

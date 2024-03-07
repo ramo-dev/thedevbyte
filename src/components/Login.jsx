@@ -31,7 +31,7 @@ const Login = () => {
 
     useEffect(() => {
         if (isLoggedin) {
-            navigate('/');
+            navigate('/profile');
         }
     }, [isLoggedin, navigate]);
 
