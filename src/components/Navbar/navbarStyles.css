@@ -1,0 +1,188 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    gap:20%;
+    padding:1.5% 4%;
+    background-color: var(--background-color);
+    filter:brightness(0.8);
+    border-bottom:1px solid crimson;
+    align-items: center;
+    color:var(--text-color);
+    position: fixed;
+    width: 100%;
+    transition: 0.2s ease-in-out;
+}
+.logo a{
+    text-decoration: none;
+    font-size: 1rem;
+}
+nav .nav-menu{
+    display: flex;
+    gap:5%;
+}
+nav .nav-menu a{
+    color:var(--text-color);
+    font-size: 1.2rem;
+
+}
+nav .nav-button{
+    display: flex;
+    justify-content: flex-end;
+    width:23%;
+    flex-wrap: nowrap;
+}
+nav .nav-button button{
+    background-color: var(--primary-color);
+    border: 0;
+    color:var(--text-color);
+    margin-left: 3%;
+    width:100px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    &:hover{
+        filter:brightness(0.8)
+    }
+}
+nav .nav-button a{
+    margin-left: 10px;
+}
+.themeMode{
+    border-radius: 50%;
+    padding: .2rem .2rem;
+    width:40px !important;
+    font-size: 1.4rem;
+    color:var(--text-color);
+    cursor: pointer;
+    background-color:transparent !important;
+    transition:rotate 2s ease-in-out;
+    &:hover{
+        background-color: rgba(0, 0, 0, 0.048)!important;
+    }
+}
+.UserProfile{
+    height:40px;
+    width:40px;
+    border-radius: 50%;
+    margin: 0 3%;
+    border:2px solid var(--primary-color);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    &:hover{
+        filter:brightness(0.7)
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* navbarStyles.css */
+.sidenav {
+    height: 100%; 
+    width: 0;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: -250px; 
+    background-color: var(--background-color);
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+    color:var(--text-color)
+}
+.sidebar-profile-flex{
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    padding:0 20px;
+}
+
+.sidebar-profile-flex p{
+    font-size: .9rem;
+}
+.sidenav.open {
+    right: 0;
+    width: 300px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color:var(--text-color);
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    filter:brightness(0.6)
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+.sidenav .UserProfile{
+    padding: 1px !important;
+    max-width: 50px !important;
+    margin-left: 10px;
+}
+.sidenav .button{
+    margin-left: 32px;
+    padding:.5rem  1.5rem;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+    .sidenav.open{
+        width: 100% !important;
+        
+    }
+}
+
+
+
+
+
+
+@media screen and (max-width:800px) {
+
+    nav{
+        height:80px;
+        z-index: 2;
+    }
+    .nav-button{
+        display:flex ;
+
+        
+    }
+    .nav-button button{
+        width:80px !important;
+        margin-left: -3px !important;
+    }
+    .nav-button .themeMode{
+        background-color: transparent;
+        padding: 0 .7rem;
+    }
+    .UserProfile{
+        min-width: 40px;
+        margin-right: .8rem;
+        overflow: hidden;
+    }
+}

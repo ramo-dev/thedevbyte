@@ -1,0 +1,424 @@
+.blogContainer{
+    display: flex;
+    justify-content: space-between;
+    color:var(--text-color);
+    align-items: flex-start;
+    padding:7% 1%;
+}
+.querySection{
+    padding: 1% 0 0 0;
+    display: flex;
+    position: fixed;
+    top:20%;
+    left:3%;
+    width: 25%;
+}
+.querySection h1{
+    position: absolute;
+    top:-60%
+}
+.match{
+    position: absolute;
+    margin:40% 2%;
+}
+.querySection input , button{
+    padding:.6rem;
+}
+.querySection input{
+    width:100%;
+    color:#111 !important;
+}
+.querySection button{
+    padding: .6rem .9rem;
+    margin:0 0 0 5px;
+    color:#111 !important;
+}
+.querySection button i{
+    color:#111;
+}
+.blogSection{
+    width:530px;
+    margin:0 40px 0 400px;
+    height:80vh;
+    /* border:2px solid crimson; */
+}
+.BlogsAll{
+    overflow-y: hidden;
+}
+.blogCard{
+    background: var(--background-color);
+    padding:2% 3% 4%  3%;
+    margin-bottom: 5%;
+    border: 1px solid grey;
+    color: var(--text-color);
+    transition: 0.2s ease-in-out;
+}
+.blogCard .blogProfile{
+
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.blogAuthorInfo{
+    display:flex ;
+    align-items: center;
+    gap:10px
+}
+.blogAuthorInfo img{
+    border: 2px solid grey;
+    height:50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.blogContent img{
+    max-height:350px;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+.createBlogSection{
+    width:350px;
+    flex-direction: column;
+    position: fixed;
+    right:2%;
+}
+.createBlogSection input, textarea{
+    width: 90%;
+    background: rgba(22, 22, 22, 0.219);
+    color: var(--text-color);
+    padding: 2% 0 20% 2%;
+    border:1px solid grey
+}
+.createBlogSection input:nth-child(1){
+    height:80px;
+    margin-bottom: 5%;
+    padding: 5% 0 20% 2%;
+    font-size: 1.1rem;
+}
+.createBlogSection .crfile{
+    height:20px;
+    padding: 2%  0 20% 2%;
+    width: 90%;
+    border:dotted 2px grey;
+    margin-bottom: 5%;
+    background-color: var(--background-color);
+
+}
+.createBlogSection textarea{
+    height:140px;
+    margin-bottom: 2%;
+
+}
+.createBlogSection button{
+    margin-bottom: 2%;
+    width: 90%;
+}
+
+
+
+.toTop {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--background-color);
+    border: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 0px 4px rgba(220, 20, 60, 0.397);
+    cursor: pointer;
+    transition-duration: 0.3s;
+    overflow: hidden;
+    position: fixed;
+    bottom:7%;
+    right: 33%;
+  }
+  
+  .svgIcon {
+    width: 12px;
+    transition-duration: 0.3s;
+  }
+  
+  .svgIcon path {
+    fill: white;
+  }
+  
+  .toTop:hover {
+    width: 140px;
+    border-radius: 50px;
+    transition-duration: 0.3s;
+    background-color: var(--primary-color);
+    align-items: center;
+  }
+  
+  .toTop:hover .svgIcon {
+    /* width: 20px; */
+    transition-duration: 0.3s;
+    transform: translateY(-200%);
+  }
+  
+  .toTop::before {
+    position: absolute;
+    bottom: -20px;
+    content: "Back to Top";
+    color: var(--text-color);
+    /* transition-duration: .3s; */
+    font-size: 0px;
+  }
+  
+  .toTop:hover::before {
+    font-size: 13px;
+    opacity: 1;
+    bottom: unset;
+    /* transform: translateY(-30px); */
+    transition-duration: 0.3s;
+  }
+  
+
+
+/* CreateNavbar MObile CSS */
+.roundedToggleMobile{
+    position: fixed;
+    border-radius: 50%;
+    width:60px !important;
+    height:60px;
+    display: none;
+    border: none;
+    background-color: crimson;
+    transition: 0.2s ease-in-out;
+    z-index: 9999;
+    &:hover{
+        filter: drop-shadow(0px 0px 20px  crimson) brightness(0.8);
+        
+    }
+}
+.roundedToggleMobile.open::-webkit-scrollbar{
+    width:8px
+}
+.createBlogMobile {
+    height: 100vh; 
+    width: 0;
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    right: -250px; 
+    background-color: var(--background-color);
+    overflow-x: hidden;
+    padding: 50px 1%;
+    transition: 0.5s;
+    color:var(--text-color)
+}
+.createBlogMobile h1{
+    margin: .5rem 2rem;
+    white-space: nowrap;
+}
+.createBlogMobile form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.createBlogMobile.open {
+    right: 0;
+    width: 100%;
+    overflow-y: hidden !important;
+}
+
+.createBlogMobile .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+.createBlogMobile .button{
+    padding:.5rem  1.5rem;
+    width: 90%;
+}
+.createBlogMobile textarea{
+    height:140px;
+    margin-bottom: 2%;
+}
+.createBlogMobile  .crfile{
+    height:20px;
+    padding: 2%  0 20% 2%;
+    width: 90%;
+    border:dotted 2px grey;
+    margin-bottom: 5%;
+    background-color: var(--background-color);
+}
+.createBlogMobile input:nth-child(1){
+    height:80px;
+    margin-bottom: 5%;
+    padding: 5% 0 20% 2%;
+    font-size: 1.1rem;
+    width: 90%;
+    background-color: var(--background-color);
+color:var(--text-color)
+}
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+
+
+
+
+
+
+
+
+  @media screen and (max-width:800px) {
+    .roundedToggleMobile{
+        display: block;
+        right:5%;
+        top:89%;
+        cursor: pointer;
+        font-size: 1.3rem;
+    }
+    .blogContainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        color:var(--text-color);
+        align-items: flex-start;
+        padding:7% 1%;
+    }
+    .querySection{
+        padding: 1% 1% 0 0;
+        display: flex;
+        position: absolute;
+        margin: 65px 19% 0 0%;
+        z-index: 0;
+        width: 97%;
+        top:4%;
+        align-items: center;
+        justify-content: center;
+    }
+    .querySection h1{
+        display: none;
+    }
+    .match{
+        display: none;
+        font-size: 1rem;
+        position: absolute;
+        margin:40% 2%;
+    }
+    .querySection input , button{
+        padding:.6rem;
+    }
+    .querySection input{
+        width:100%;
+        color:#111 !important;
+    }
+    .querySection button{
+        padding: .6rem .9rem;
+        margin:0 0 0 5px;
+        color:#111 !important;
+    }
+    .querySection button i{
+        color:#111;
+    }
+    .blogSection{
+        max-width:97%;
+        margin:37% 3% 0 2%;
+    }
+    .blogSection h1{
+        display: none;
+    }
+    .blogCard{
+        background: var(--background-color);
+        padding:2% 3% 3%  3%;
+        margin-bottom: 5%;
+        border: 1px solid grey;
+        color: var(--text-color);
+        transition: 0.2s ease-in-out;
+    }
+    .blogCard .blogProfile{
+    
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .blogAuthorInfo{
+        display:flex ;
+        align-items: center;
+        gap:10px
+    }
+    .blogAuthorInfo img{
+        border: 2px solid grey;
+        height:50px;
+        width: 50px;
+        border-radius: 50%;
+    }
+    .blogContent img{
+        max-height:400px;
+        width: 100%;
+        min-height: 350px;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    .createBlogSection{
+        width:350px;
+        flex-direction: column;
+        position: fixed;
+        right:2%;
+        right: -700px;
+    }
+    .createBlogSection input, textarea{
+        width: 90%;
+        background: rgba(22, 22, 22, 0.219);
+        color: var(--text-color);
+        padding: 2% 0 20% 2%;
+        border:1px solid grey
+    }
+    .createBlogSection input:nth-child(1){
+        height:80px;
+        margin-bottom: 5%;
+        padding: 5% 0 20% 2%;
+        font-size: 1.1rem;
+    }
+    .createBlogSection .crfile{
+        height:20px;
+        padding: 2%  0 20% 2%;
+        width: 90%;
+        border:dotted 2px grey;
+        margin-bottom: 5%;
+        background-color: var(--secondary-color);
+    
+    }
+    .createBlogSection textarea{
+        height:140px;
+        margin-bottom: 2%;
+    
+    }
+    .createBlogSection button{
+        margin-bottom: 2%;
+        width: 90%;
+    }
+
+    
+  }

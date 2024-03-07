@@ -1,0 +1,156 @@
+.profileSettings{
+    padding:100px 10px ;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+.backarrow{
+    position: absolute;
+    color:var(--text-color);
+    top:15%;
+    left:5%;
+    font-size: 2rem;
+}
+.SetProfilePic{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px;
+    gap:20px;
+    height:60vh
+}
+.SetProfilePic button{
+    width: 180px;
+    white-space: nowrap;
+    font-size: .9rem;
+}
+.SetProfilePic .noticeSetProfile{
+    border: 1px solid var(--primary-color);
+    border-radius: 7px;
+    padding:10px;
+    width:200px;
+    font-size: .7rem;
+}
+.SetProfilePic img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 4px solid var(--primary-color);
+}
+.imgSelector{
+    display: flex;
+    flex-direction: row ;
+    flex-wrap: wrap;
+    gap:15px;
+    padding: 2% 1%;
+    margin-bottom: 10%;
+}
+.imgCard{
+    border: 1px solid rgba(128, 128, 128, 0.274);
+    border-radius: 5px;
+    white-space: wrap;
+    text-align: center;
+    width:350px;
+    flex-basis: calc(33.33% - 10px); /* Set the width of each card to one-third of the container minus the gap */
+    max-width: calc(33.33% - 10px);
+    cursor: pointer;
+}
+.imgCard img{
+    height:70px;
+    width: 100%;
+    border-radius: 0;
+    border: none;
+    transition: .3s ease-in-out;
+    &:hover{
+        filter:brightness(0.8)
+    }
+}
+.changeProfileInfo{
+    padding-top: 100px;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+.changeProfileInfo form{
+    display: flex;
+    flex-direction: column;
+}
+.changeProfileInfo form input{
+    padding: 10px 5px;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    border:1px solid var(--text-color)
+}
+.changeProfileInfo form button{
+    margin-top: 10px;
+}
+
+@media screen and (max-width:800px) {
+    .profileSettings{
+        padding:250px 20px ;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-x: hidden;
+    }
+    .SetProfilePic{
+        justify-content: space-around;
+        gap:10px;
+        height:50vh;
+        margin-bottom: 50%;
+    }
+    .SetProfilePic button{
+        width: 150px;
+        white-space: nowrap;
+        font-size: .8rem;
+    }
+    .SetProfilePic .noticeSetProfile{
+        width:190px;
+        font-size: .7rem;
+    }
+    .changeProfileInfo{
+        padding: 20px;
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+/* // await reauthenticateWithCredential(account.currentUser, credential);
+// await account.currentUser.updatePassword(newPassword);
+
+
+
+
+// <label htmlFor="username">Username: </label>
+//                         <input type="text" name="username" id="username" value={username} onChange={(e) => setUsername(e.target.value)} />
+//                         <label htmlFor="currentPassword">Current Password: </label>
+//                         <input type="password" name="currentPassword" id="currentPassword" value={currentPassword} onChange={(e) => setCurrentPassword(e.target.value)} />
+//                         <label htmlFor="newPassword">New Password: </label>
+//                         <input type="password" name="newPassword" id="newPassword" value={newPassword} onChange={(e) => setNewPassword(e.target.value)} />
+//                         <label htmlFor="email">Email: </label>
+//                         <input type="email" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+//                         <label htmlFor="confirmEmail">Confirm Email: </label>
+//                         <input type="email" name="confirmEmail" id="confirmEmail" value={confirmEmail} onChange={(e) => setConfirmEmail(e.target.value)} />
+//                         <button type="submit" className="button">Update info</button> */
+
+
+
+
+
+
+/* https://gravatar.com/avatar/0fd3bfeaeca3b8ae6826d7e69915b4f5?s=400&d=robohash&r=x */
+/* https://gravatar.com/avatar/f7a2122ce632062428f7063c6c597efe?s=400&d=robohash&r=x */
+/* https://gravatar.com/avatar/06f56e5ed6d49e86a1f8735b41d1e8ca?s=400&d=robohash&r=x */
+/* https://gravatar.com/avatar/0a7b51a048d32d096d0123f0b660a2ec?s=400&d=robohash&r=x */
+/* https://gravatar.com/avatar/ad5d42be3dff5f0d01edd36da55795c8?s=400&d=robohash&r=x */
+/* https://gravatar.com/avatar/08c342de4ea15087f79c69d6412f6f06?s=400&d=robohash&r=x */
+/* https://gravatar.com/avatar/f0b265a9baaae77dc04dd01407604c80?s=400&d=robohash&r=x */
+/* https://gravatar.com/avatar/e9d04de988ec100e12c142afa58b2b49?s=400&d=robohash&r=x */
