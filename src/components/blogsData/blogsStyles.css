@@ -444,9 +444,9 @@ color:var(--text-color)
         padding: 1% 1% 0 0;
         display: flex;
         position: absolute;
-        margin: 80px 19% 0 0%;
+        margin: 70px 19% 0 0%;
         z-index: -1;
-        width:90%;
+        width:95%;
         top:4%;
         align-items: center;
         justify-content: center;
