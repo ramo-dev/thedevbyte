@@ -45,7 +45,8 @@ const Login = () => {
         } catch (err) {
             console.log(err);
             // toast.error('Invalid Email or Password');
-            alert('Invalid Email or Password')
+            toast('Invalid Email or Password', {
+                style : {background : '#d9534f'},})
             setIsLoggedIn(false);
         } finally {
             setIsLoginLoading(false); // Set loading state to false when login completes
@@ -56,7 +57,8 @@ const Login = () => {
         e.preventDefault();
         if (password.length < 8) {
             // toast.error('Password must be more than 8 characters');
-            alert('Password must be more than 8 characters')
+            toast('Password must be more than 8 characters', {
+                style : {background : '#d9534f'},})
         } else {
             setIsPasswordValid(true);
             LoginWithEmailandPassword();
