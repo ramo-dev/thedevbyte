@@ -6,6 +6,7 @@ import './profileStyles.css';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import { db } from '../../firebase/firebase';
 import { Link } from 'react-router-dom';
+import { toast,Toaster } from 'sonner';
 
 const Profile = () => {
     const [newUsername, setUsername] = useState('');
@@ -70,10 +71,12 @@ const Profile = () => {
             // Update the profile with the provided fields
             await updateProfile(account.currentUser, updatedProfile);
 
-            alert('Profile updated successfully!');
+        toast('Profile updated successfully!', {
+        style : {background : '#5cb85c'},});
         } catch (error) {
             console.error('Error updating profile:', error.message);
-            alert('Error updating profile. Please try again.');
+            toast('Error updating profile. Please try again.', {
+                style : {background : '#d9534f'},});
         }
     };
 
@@ -84,6 +87,7 @@ const Profile = () => {
     return (
         <>
             <Navbar />
+        <Toaster position='top-right' richColors/>
             <div className="profileSettings">
                 <Link to='/'><i className="fa-solid fa-left-long backarrow"></i></Link>
                 <div className="SetProfilePic">

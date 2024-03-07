@@ -39,7 +39,8 @@ const Login = () => {
         try {
             setIsLoginLoading(true); // Set loading state to true when login starts
             const user = await signInWithEmailAndPassword(account, email, password);
-            !!user && toast.success('Login successful');
+            !!user && toast.success('Login successful', {
+                style : {background : '#5cb85c'},});
             setIsLoggedIn(true);
         } catch (err) {
             console.log(err);

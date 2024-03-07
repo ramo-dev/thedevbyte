@@ -31,9 +31,11 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (username.trim() === '' || email.trim() === '' || password.trim() === '') {
-            toast.error('Please fill all required fields');
+            toast.error('Please fill all required fields', {
+                style : {background : '#d9534f'},});
         } else if (password.length < 8 || password !== confPass) {
-            toast.error('Passwords do not meet requirements or do not match');
+            toast.error('Passwords do not meet requirements or do not match', {
+                style : {background : '#d9534f'},});
         } else {
             try {
                 const userCredential = await createUserWithEmailAndPassword(account, email, password);
@@ -50,11 +52,13 @@ const Register = () => {
                     }
                     await updateProfile(userCredential.user, { displayName, photoURL: profilePhoto });
                     await addUserToFirestore(userCredential.user.uid, displayName, email, profilePhoto); // Pass displayName and profilePhoto here
-                    toast.success("Account Created Successfully");
+                    toast.success("Account Created Successfully",
+                    {style: { background: '#5cb85c' }});
                     setIsPasswordValid(true);
                 }
             } catch (error) {
-                toast.error(error.message);
+                toast.error(error.message, {
+                    style : {background : '#d9534f'},});
             }
         }
     };

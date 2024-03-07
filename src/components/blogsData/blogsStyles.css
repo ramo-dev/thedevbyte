@@ -368,8 +368,9 @@ color:var(--text-color)
         border-radius: 50%;
     }
     .blogContent img{
-        max-height:300px;
         width: 100%;
+        min-height: 270px;
+        padding: 2% 0;
     }
     
     
