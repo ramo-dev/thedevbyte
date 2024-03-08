@@ -425,6 +425,7 @@ color:var(--text-color)
 
 
   @media screen and (max-width:800px) {
+    
     .roundedToggleMobile{
         display: block;
         right:5%;
@@ -445,7 +446,7 @@ color:var(--text-color)
         display: flex;
         position: absolute;
         margin: 70px 19% 0 0%;
-        z-index: -1;
+        z-index: 0;
         width:95%;
         top:4%;
         align-items: center;
@@ -478,7 +479,7 @@ color:var(--text-color)
 
   @media screen and (min-width:800px) {
     .roundedToggleMobile{
-        display: block;
+        display: none;
         right:5%;
         top:89%;
         cursor: pointer;
@@ -497,7 +498,7 @@ color:var(--text-color)
         display: flex;
         position: absolute;
         margin: 60px 19% 0 0%;
-        z-index: -1;
+        z-index: 0;
         width:50%;
         top:4%;
         align-items: center;
@@ -530,17 +531,17 @@ color:var(--text-color)
 
 
 
-  @media screen and (min-width:1200px) {
+  @media screen and (min-width:1380px) {
     .roundedToggleMobile{
-        display: block;
+        display: none;
         right:5%;
         top:89%;
         cursor: pointer;
         font-size: 1.3rem;
+        padding: 0 50%;
     }
     .blogContainer{
         display: flex;
-        flex-direction: row;
         justify-content: space-between;
         color:var(--text-color);
         align-items: flex-start;
@@ -551,8 +552,8 @@ color:var(--text-color)
         display: flex;
         position: absolute;
         margin: 65px 19% 0 0%;
-        z-index: -1;
-        width:43%;
+        z-index: 0;
+        width:53%;
         top:4%;
         align-items: center;
         justify-content: center;
@@ -561,8 +562,8 @@ color:var(--text-color)
         display: none;
     }
     .blogSection{
-        width:50%;
-        margin:70px 3% 0 2%;
+        max-width:97%;
+        margin:10% 3% 0 2%;
     }
     .blogSection h1{
         display: none;
