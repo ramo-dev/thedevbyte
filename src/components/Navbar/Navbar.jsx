@@ -32,6 +32,7 @@ const Navbar = () => {
 
     useEffect(() => {
         // Update CSS variables based on dark mode state
+        
         document.documentElement.style.setProperty('--background-color', darkMode ? '#111' : '#fff');
         document.documentElement.style.setProperty('--primary-color', darkMode ? 'crimson' : 'crimson');
         document.documentElement.style.setProperty('--text-color', darkMode ? '#fff' : '#000');
