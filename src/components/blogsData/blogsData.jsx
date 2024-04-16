@@ -244,7 +244,7 @@ const BlogsData = () => {
             <h1>Search</h1>
             <br />
             <input
-              type="text"
+              type="search"
               placeholder="Search Blog"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
