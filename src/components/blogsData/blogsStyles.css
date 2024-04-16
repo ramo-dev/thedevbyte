@@ -298,13 +298,20 @@ color:var(--text-color)
 
 
   @media screen and (max-width:800px) {
-    .roundedToggleMobile{
-        display: block;
-        right:5%;
-        top:89%;
-        cursor: pointer;
-        font-size: 1.3rem;
-    }
+    .roundedToggleMobile {
+     display: flex;
+    width: 30px !important;
+    /* display: block; */
+    right: 5%;
+    top: 89%;
+    cursor: pointer;
+    font-size: 1.3rem;
+    padding: 1rem 2rem;
+    align-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
     .blogContainer{
         display: flex;
         flex-direction: column;
@@ -438,14 +445,6 @@ color:var(--text-color)
 
 
   @media screen and (max-width:800px) {
-    
-    .roundedToggleMobile{
-        display: block;
-        right:5%;
-        top:89%;
-        cursor: pointer;
-        font-size: 1.3rem;
-    }
     .blogContainer{
         display: flex;
         flex-direction: row;
@@ -547,11 +546,6 @@ color:var(--text-color)
   @media screen and (max-width:1280px) {
     .roundedToggleMobile{
         display: none;
-        right:5%;
-        top:89%;
-        cursor: pointer;
-        font-size: 1.3rem;
-        padding: 0 50%;
     }
     .blogContainer{
         display: flex;
