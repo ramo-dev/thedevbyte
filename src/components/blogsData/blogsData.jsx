@@ -83,6 +83,15 @@ const BlogsData = () => {
         }
     }
 
+    function handleSearch(e){
+      e.preventDefault()
+      query.length === 0
+        ? toast.info("Please enter text to search", {
+            style: { background: "#0275d8" },
+          })
+        : filterData();
+    }
+
     function filterData() {
         toast.loading('Loading Search results....', {
             style: { background: '#0275d8' }
@@ -217,91 +226,157 @@ const BlogsData = () => {
     };
 
     return (
-        <>
-        <Toaster richColors
-            position="top-right"
-            expand={true}
-            />
-    
+      <>
+        <Toaster richColors position="top-right" expand={true} />
+
         <div className="blogContainer">
-        {isLoggedin ? <button onClick={toggleNav} className='roundedToggleMobile'><i className="fa-solid fa-pen"></i></button> : <></>}
-            <form className="querySection" onSubmit={(e) => { e.preventDefault(); filterData(); }}>
-                <h1>Search</h1><br />
-                <input type="text" placeholder="Search Blog" value={query} onChange={(e) => setQuery(e.target.value)} />
-                <button><i className='fa fa-search'></i></button>
-                {query === '' && match === 0 && (
-                    <h1 className='match'>No Blogs Searched</h1>
-                )}
-                {query !== '' && match === 0 && (
-                    <h1 className='match'>No Blogs Found</h1>
-                )}
-                {match > 0 && (
-                    <h1 className='match'>{match} Blogs Found</h1>
-                )}
-            </form>
-            <div className="blogSection">
-                <h1>Posts</h1>
-                <div className="BlogsAll">
-                    {isLoading ? (
-                        <h1 style={{ marginTop: '30px' }}>Loading...</h1>
-                    ) : (
-                        filteredBlogs.map(blog => (
-                            <div className="blogCard" key={blog.id}>
-                                <div className="blogProfile">
-                                    <div className="blogAuthorInfo">
-                                    <img src={blog.profilePhoto} alt="" />
-                                        <p>{blog.username}</p>
-                                    </div>
-                                    <div className="blogDatePosted">
-                                    {new Date(blog.timestamp.seconds * 1000).toLocaleString('en-US', { dateStyle: 'short', timeStyle: 'short' })}
-                                    </div>
-                                </div>
-                                <div className="blogContent">
-                                
-                                        {blog.imageURL && <img src={blog.imageURL} alt="" />}
-                                        <h2>{blog.title}</h2>
-                                        <p>{blog.body}</p>
-                                    </div>
-                                <br />
-                                    {blog.userId === account?.currentUser?.uid && ( 
-                                    <button onClick={() => deletePost(blog.id)} className='button'>Delete</button> 
-                                    )}
-                            </div>
-                        ))
-                    )}
-                </div>
-            </div>
-            {isLoggedin ? (
-                <div className="createBlogSection">
-                    <h1>Create New Blog</h1>
-                    <form action="" onSubmit={handleSubmit}>
-                        <input type="text" value={title} onChange={e => setTitle(e.target.value)} placeholder="Enter Title" />
-                        <textarea value={content} onChange={e => setContent(e.target.value)} placeholder="Enter Content"></textarea>
-                        <input type="file" accept="image/*" className='crfile' onChange={e => setImageSrc(e.target.files[0])}/>
-                        <button className='button'>Post</button>
-                    </form>
-                    
-                </div>
-            ) : (
-                <div className="createBlogSection">
-                    <h1 style={{marginTop : '200px'}}>Login To Post A Blog!</h1>
-                    <Link to="/login"><button className='button' style={{margin : '10px 50px 0% 60px', width:'60%'}}>Login</button></Link>
-                </div>
+          {isLoggedin ? (
+            <button onClick={toggleNav} className="roundedToggleMobile">
+              <i className="fa-solid fa-pen"></i>
+            </button>
+          ) : (
+            <></>
+          )}
+          <form
+            className="querySection"
+            onSubmit={handleSearch}
+          >
+            <h1>Search</h1>
+            <br />
+            <input
+              type="text"
+              placeholder="Search Blog"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+            />
+            <button style={{cursor : "pointer"}}>
+              <i className="fa fa-search"></i>
+            </button>
+            {query === "" && match === 0 && (
+              <h1 className="match">No Blogs Searched</h1>
             )}
-            
-                <div id="createBlogMobile" className={`createBlogMobile ${isSideNavOpen ? 'open' : ''}`}>
-                    <h1>Create New Blog</h1>
-                    <a href="javascript:void(0)" className="closebtn" onClick={toggleNav}>&times;</a>
-                            <form action="" onSubmit={handleSubmit}>
-                                    <input type="text" value={title} onChange={e => setTitle(e.target.value)} placeholder="Enter Title" />
-                                    <textarea value={content} onChange={e => setContent(e.target.value)} placeholder="Enter Content"></textarea>
-                                    <input type="file" accept="image/*" className='crfile' onChange={e => setImageSrc(e.target.files[0])}/>
-                                    <br></br>
-                                    <button className='button' >Post</button>
-                            </form>
-                </div>
+            {query !== "" && match === 0 && (
+              <h1 className="match">No Blogs Found</h1>
+            )}
+            {match > 0 && <h1 className="match">{match} Blogs Found</h1>}
+          </form>
+          <div className="blogSection">
+            <h1>Posts</h1>
+            <div className="BlogsAll">
+              {isLoading ? (
+                <h1 style={{ marginTop: "30px" }}>Loading...</h1>
+              ) : (
+                filteredBlogs.map((blog) => (
+                  <div className="blogCard" key={blog.id}>
+                    <div className="blogProfile">
+                      <div className="blogAuthorInfo">
+                        <img src={blog.profilePhoto} alt="" />
+                        <p>{blog.username}</p>
+                      </div>
+                      <div className="blogDatePosted">
+                        {new Date(blog.timestamp.seconds * 1000).toLocaleString(
+                          "en-US",
+                          { dateStyle: "short", timeStyle: "short" }
+                        )}
+                      </div>
+                    </div>
+                    <div className="blogContent">
+                      {blog.imageURL && <img src={blog.imageURL} alt="" />}
+                      <h2>{blog.title}</h2>
+                      <p>{blog.body}</p>
+                    </div>
+                    <br />
+                    {blog.userId === account?.currentUser?.uid && (
+                      <button
+                        onClick={() => deletePost(blog.id)}
+                        className="button"
+                      >
+                        Delete
+                      </button>
+                    )}
+                  </div>
+                ))
+              )}
+              {!isLoading && BlogsData.length === 0 &&  <h1>No Posts Found</h1>}
+              {query !== "" && match === 0 && (
+                <h1 className="match">No Blogs Found</h1>
+              )}
+            </div>
+          </div>
+          {isLoggedin ? (
+            <div className="createBlogSection">
+              <h1>Create New Blog</h1>
+              <form action="" onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                  placeholder="Enter Title"
+                />
+                <textarea
+                  value={content}
+                  onChange={(e) => setContent(e.target.value)}
+                  placeholder="Enter Content"
+                ></textarea>
+                <input
+                  type="file"
+                  accept="image/*"
+                  className="crfile"
+                  onChange={(e) => setImageSrc(e.target.files[0])}
+                />
+                <button className="button">Post</button>
+              </form>
+            </div>
+          ) : (
+            <div className="createBlogSection">
+              <h1 style={{ marginTop: "200px" }}>Login To Post A Blog!</h1>
+              <Link to="/login">
+                <button
+                  className="button"
+                  style={{ margin: "10px 50px 0% 60px", width: "60%" }}
+                >
+                  Login
+                </button>
+              </Link>
+            </div>
+          )}
+
+          <div
+            id="createBlogMobile"
+            className={`createBlogMobile ${isSideNavOpen ? "open" : ""}`}
+          >
+            <h1>Create New Blog</h1>
+            <a
+              href="javascript:void(0)"
+              className="closebtn"
+              onClick={toggleNav}
+            >
+              &times;
+            </a>
+            <form action="" onSubmit={handleSubmit}>
+              <input
+                type="text"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                placeholder="Enter Title"
+              />
+              <textarea
+                value={content}
+                onChange={(e) => setContent(e.target.value)}
+                placeholder="Enter Content"
+              ></textarea>
+              <input
+                type="file"
+                accept="image/*"
+                className="crfile"
+                onChange={(e) => setImageSrc(e.target.files[0])}
+              />
+              <br></br>
+              <button className="button">Post</button>
+            </form>
+          </div>
         </div>
-        </>
+      </>
     );
 }
 
