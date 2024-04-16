@@ -37,13 +37,18 @@
     color:#111;
 }
 .blogSection{
-    width:530px;
-    margin:0 40px 0 400px;
-    height:80vh;
-    /* border:2px solid crimson; */
+    width: 530px;
+    margin: 0% 40px 0 30%;
+    height: 80vh;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    /* border: 2px solid crimson; */
 }
 .BlogsAll{
     overflow-y: hidden;
+    height: 100%;
+    
 }
 .blogCard{
     background: var(--background-color);
@@ -275,9 +280,19 @@ color:var(--text-color)
     .sidenav a {font-size: 18px;}
 }
 
+@media screen and (max-width:850px) {
+    .createBlogSection{
+        display: none;
+    }
 
-
-
+    .querySection{
+        width: 95% !important;
+        position: relative;
+    }
+    .blogSection{
+        width: 95% !important;
+    }
+}
 
 
 
@@ -335,8 +350,8 @@ color:var(--text-color)
         color:#111;
     }
     .blogSection{
-        max-width:97%;
-        margin:130px 3% 0 2%;
+            width: 100%;
+    margin: 150px 1% 0 1% !important;
     }
     .blogSection h1{
         display: none;
@@ -382,7 +397,6 @@ color:var(--text-color)
     
     
     .createBlogSection{
-        width:350px;
         flex-direction: column;
         position: fixed;
         right:2%;
@@ -457,7 +471,7 @@ color:var(--text-color)
     }
     .blogSection{
         width:100% ;
-        margin:140px 1% 0 1%;
+        margin:40px 1% 0 1%;
 
     }
     .blogSection h1{
@@ -477,7 +491,7 @@ color:var(--text-color)
 
 
 
-  @media screen and (min-width:800px) {
+  /* @media screen and (min-width:800px) {
     .roundedToggleMobile{
         display: none;
         right:5%;
@@ -528,10 +542,10 @@ color:var(--text-color)
   }
 
 
+ */
 
 
-
-  @media screen and (min-width:1380px) {
+  @media screen and (max-width:1280px) {
     .roundedToggleMobile{
         display: none;
         right:5%;
@@ -562,11 +576,11 @@ color:var(--text-color)
         display: none;
     }
     .blogSection{
-        max-width:97%;
-        margin:10% 3% 0 2%;
+        width:53%;
+        margin:80px 3% 0 2%;
     }
     .blogSection h1{
-        display: none;
+        display: block;
     }
     .blogCard{
         background: var(--background-color);
@@ -577,4 +591,4 @@ color:var(--text-color)
         transition: 0.2s ease-in-out;
     }
 
-  }
+  } 
