@@ -297,7 +297,7 @@ const BlogsData = () => {
                   </div>
                 ))
               )}
-             {!isLoading && filteredBlogs.length === 0 &&  <h1>No Posts Found</h1>}
+
               
             </div>
           </div>
