@@ -39,7 +39,7 @@
 .blogSection{
     width: 530px;
     margin: 0% 40px 0 30%;
-    height: 80vh;
+    height: max-content;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
