@@ -298,9 +298,7 @@ const BlogsData = () => {
                 ))
               )}
               {!isLoading && BlogsData.length === 0 &&  <h1>No Posts Found</h1>}
-              {query !== "" && match === 0 && (
-                <h1 className="match">No Blogs Found</h1>
-              )}
+              
             </div>
           </div>
           {isLoggedin ? (
