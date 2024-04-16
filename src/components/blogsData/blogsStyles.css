@@ -299,7 +299,7 @@ color:var(--text-color)
 
   @media screen and (max-width:800px) {
     .roundedToggleMobile {
-     display: flex;
+     display: flex !important;
     width: 30px !important;
     /* display: block; */
     right: 5%;
